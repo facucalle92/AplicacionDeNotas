@@ -16,6 +16,7 @@ namespace WindowsFormsApp3
         Alumno[] alumnos = new Alumno[5];
         int contador = 0;
         Boolean estaAcomodado = false;
+        const string Comillas = "\"";
         #endregion
         public Form1()
         {
@@ -153,7 +154,7 @@ namespace WindowsFormsApp3
             {
                 if (dataGridLista[0, j].Value.ToString().Equals(txtBuscar.Text))
                 {
-                    MessageBox.Show("Lista Original: El nombre " + dataGridLista[0, j].Value.ToString() + " se encuentra en la pocision: " + (j + 1));
+                    MessageBox.Show("Lista Original: El nombre " + Comillas + dataGridLista[0, j].Value.ToString() + Comillas + " se encuentra en la pocision: " + (j + 1));
                     bandera = true;
 
                     //Busca en la lista ordenada
@@ -164,7 +165,7 @@ namespace WindowsFormsApp3
                         {
                             if (alumnos[i].Nombre.Equals(txtBuscar.Text))
                             {
-                                MessageBox.Show("Lista Ordenada: El nombre " + alumnos[i].Nombre + " se encuentra en la pocision: " + (i + 1));
+                                MessageBox.Show("Lista Ordenada: El nombre " + Comillas + alumnos[i].Nombre + Comillas + " se encuentra en la pocision: " + (i + 1));
                                 txtBuscar.Text = "";
                                 return;
                             }
